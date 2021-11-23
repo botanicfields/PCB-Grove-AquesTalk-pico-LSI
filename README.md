@@ -11,7 +11,7 @@ AquesTalk pico LSI into the Grove of M5
 - [Data Sheet: 音声合成 LSI 「AquesTalk pico LSI」ATP3012](https://www.a-quest.com/archive/manual/atp3012_datasheet.pdf)
 
 ### 動作例
-- [Youtube: AquesTalk pico LSI into the Grove of M5](https://youtu.be/xxxxxxxx)
+- [Youtube: AquesTalk pico LSI into the Grove of M5](https://youtu.be/mju6NteZsHU)
 
 ### 組み立て例
 　AquesTalk piso LSI（28ピンDIPタイプ）1個をICソケットに装着します。ATP3011用とATP3012用のソケットがあります。どちらか一方のみを装着してください。  
