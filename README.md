@@ -3,15 +3,16 @@
 AquesTalk pico LSI into the Grove of M5
 
 # 1. 概要
-　「AquesTalk pico LSI用Grove(M5)接続基板」は、市販の音声合成専用LSI「AquesTalk pico LSI」（別売）をGroveコネクタでM5シリーズに接続するための基板です。
-- [スイッチサイエンス: AquesTalk pico LSI用Grove(M5)接続基板](https://www.switch-science.com/xxxx)
-
+　「AquesTalk pico LSI用Grove(M5)接続基板」は、市販の音声合成専用LSI「AquesTalk pico LSI」（別売）をGroveコネクタでM5シリーズに接続するための基板です。  
 　AquesTalk pico LSIの詳細は、データシートを参照ください。
 - [Data Sheet: 音声合成 LSI 「AquesTalk pico LSI」ATP3011](https://www.a-quest.com/archive/manual/atp3011_datasheet.pdf)
 - [Data Sheet: 音声合成 LSI 「AquesTalk pico LSI」ATP3012](https://www.a-quest.com/archive/manual/atp3012_datasheet.pdf)
 
+### 委託販売
+（スイッチサイエンス扱い）[AquesTalk pico LSI用Grove(M5)接続基板](https://www.switch-science.com/7625)
+
 ### 動作例
-- [Youtube: AquesTalk pico LSI into the Grove of M5](https://youtu.be/mju6NteZsHU)
+（YouTube）[AquesTalk pico LSI into the Grove of M5](https://youtu.be/mju6NteZsHU)
 
 ### 組み立て例
 　AquesTalk piso LSI（28ピンDIPタイプ）1個をICソケットに装着します。ATP3011用とATP3012用のソケットがあります。どちらか一方のみを装着してください。  
@@ -19,16 +20,16 @@ AquestTalk pico LSIの取り付け: 左 ATP3011, 右 ATP3012
 <img src="./image/asm.JPG" width=300>  
 
 ## 1.1 特徴
-- AquesTalk pico LSI（28 ピン DIP タイプ）1個を搭載できます。
-- AquesTalk pico LSIのATP3011, ATP3012の両方に対応しています。
+- AquesTalk pico LSI（28ピンDIPタイプ）1個を搭載できます。
+- ATP3011, ATP3012の両方に対応しています。
 - パワーアンプ（LM4871）を内蔵し、スピーカーを直接駆動できます。
-- M5シリーズの仕様に合わせ、Groveの電源+5V、信号3.3Vに対応します。
+- M5シリーズのGrove仕様に合わせ、電源+5V、信号3.3Vに対応します。
 - AquestTalk pico LSIは3.3Vで動作し、M5シリーズに直結できます。
 - DIPスイッチで動作モード・通信モードを設定できます。
 - 動作モード・通信モードの変更を反映するリセットボタンがあります。
 - I2C接続用、UART接続用のGroveコネクタがあり、接続方法を選べます。
 - スタンドアロンモードのためのコネクタがあります。
-- SPI接続も可能です。
+- SPI接続も可能です（ハンダ付けが必要です）。
 
 DIP: Dual In-line Package  
 I2C: Inte-Integrated Circuit  
@@ -45,21 +46,21 @@ SPI: Serial Peripheral Interface
 ※ ケースや足などは付属しません。
 
 ### 商品写真
-写真左: 内容物、写真右: モジュール基板裏面  
+写真左: 内容物、写真右: 基板裏面  
 <img src="./image/product1.JPG" width=300> <img src="./image/product2.JPG" width=300>  
 
 ## 1.3 別途必要なもの
 - AquesTalk pico LSI（秋月電子通商扱い）  
-音声合成ＬＳＩ　ＡＴＰ３０１１Ｆ１－ＰＵ（ゆっくりな女性の音声）
-[ATP3011F1-PU](https://akizukidenshi.com/catalog/g/gI-06220/)  
-音声合成ＬＳＩ　ＡＴＰ３０１１Ｆ４－ＰＵ（かわいい女性の音声）
-[ATP3011F4-PU](https://akizukidenshi.com/catalog/g/gI-05665/)  
-音声合成ＬＳＩ　ＡＴＰ３０１１Ｍ６－ＰＵ（男性の音声）
-[ATP3011M6-PU](https://akizukidenshi.com/catalog/g/gI-06225/)  
-音声合成ＬＳＩ　ＡＴＰ３０１２Ｆ６－ＰＵ（女性の音声明瞭版）
-[ATP3012F6-PU](https://akizukidenshi.com/catalog/g/gI-09973/)  
-音声合成ＬＳＩ　ＡＴＰ３０１２Ｒ５－ＰＵ（小型ロボットの音声）
-[ATP3012R5-PU](https://akizukidenshi.com/catalog/g/gI-11517/)  
+[音声合成ＬＳＩ　ＡＴＰ３０１１Ｆ１－ＰＵ（ゆっくりな女性の音声）
+ATP3011F1-PU](https://akizukidenshi.com/catalog/g/gI-06220/)  
+[音声合成ＬＳＩ　ＡＴＰ３０１１Ｆ４－ＰＵ（かわいい女性の音声）
+ATP3011F4-PU](https://akizukidenshi.com/catalog/g/gI-05665/)  
+[音声合成ＬＳＩ　ＡＴＰ３０１１Ｍ６－ＰＵ（男性の音声）
+ATP3011M6-PU](https://akizukidenshi.com/catalog/g/gI-06225/)  
+[音声合成ＬＳＩ　ＡＴＰ３０１２Ｆ６－ＰＵ（女性の音声明瞭版）
+ATP3012F6-PU](https://akizukidenshi.com/catalog/g/gI-09973/)  
+[音声合成ＬＳＩ　ＡＴＰ３０１２Ｒ５－ＰＵ（小型ロボットの音声）
+ATP3012R5-PU](https://akizukidenshi.com/catalog/g/gI-11517/)  
 - スピーカー  
 4～8Ω程度、1W以上が望ましいです
 - スピーカーケーブル  
@@ -73,31 +74,40 @@ Arduino-IDE: Ver.1.18.16以降, Boards Manager: M5Stack 2.0.0以降, Library: M5
 - その他  
 SLEEP信号などを接続する場合には、ジャンパケーブルが必要です。SPI接続の場合には、ピンヘッダおよびハンダ付けが必要です
 
-# 2. 基板の接続
+# 2. 接続
 
 ## 2.1 I2C接続
-　SCL, SDAの表記のあるGroveコネクタに接続します。  
-### (1)M5AtomのGroveコネクタに接続  
-　I2Cとして SCL=GPIO32, SDA=GPIO26 を指定します。  
-<img src="./image/m5atomi2c.JPG" width=300>  
+　SCL, SDAの表記のあるGroveコネクタに接続します。
 
-### (2)[「M5Atom用GROVEコネクタ基板」](https://www.switch-science.com/catalog/7309/)経由で接続  
-　I2CとしてデフォルトのWire（SCL=GPIO21, SDA=GPIO25）を使用できます。  
-<img src="./image/m5atombi2c.JPG" width=300>  
+### (1)M5AtomのGroveコネクタに接続  
+　I2Cとして、SCL=GPIO32, SDA=GPIO26を指定します。サンプルプログラムではWire1を選択します。
+
+<img src="./image/m5atomi2c.JPG" width=300>
+
+### (2)「M5Atom用GROVEコネクタ基板※（別売）」経由で接続  
+　I2Cとして、デフォルトのWire（SCL=GPIO21, SDA=GPIO25）を使用できます。  
+※（スイッチサイエンス扱い）[M5Atom用GROVEコネクタ基板](https://www.switch-science.com/catalog/7309/)
+
+<img src="./image/m5atombi2c.JPG" width=300>
 
 ### (3)M5stackのGroveコネクタに接続  
-　I2CとしてデフォルトのWire（SCL=GPIO22, SDA=GPIO21）を使用できます。  
-<img src="./image/m5stacki2c.JPG" width=300>  
+　I2Cとして、デフォルトのWire（SCL=GPIO22, SDA=GPIO21）を使用できます。
+
+<img src="./image/m5stacki2c.JPG" width=300>
 
 ## 2.2 UART接続
-　TX, RXの表記のあるGroveコネクタに接続します。基板上のTXがM5シリーズのRXに、基板上のRXがM5シリーズのTXに接続されます。  
+　TX, RXの表記のあるGroveコネクタに接続します。基板上のTXがM5シリーズのRXに、基板上のRXがM5シリーズのTXに接続されます。
+
 ### (1)M5AtomのGroveコネクタに接続  
-　M5Atom側は、RX=GPIO32, TX=GPIO26を指定します。  
-<img src="./image/m5atomuart.JPG" width=300>  
+　M5Atom側は、RX=GPIO32, TX=GPIO26を指定します。
+
+<img src="./image/m5atomuart.JPG" width=300>
 
 ### (2)M5stackのGPIOに接続  
-　接続には、[「GROVE - 4ピン - ジャンパオスケーブル」](https://www.switch-science.com/catalog/6245/)相当のケーブルが必要です。M5Stack側は、RX=GPIO16, TX=GPIO17, +5V, GND を接続します。  
-<img src="./image/m5stackuart.JPG" width=300>  
+　接続には、「GROVE - 4ピン - ジャンパオスケーブル※（別売）」相当のケーブルが必要です。M5Stack側は、RX=GPIO16, TX=GPIO17, +5V, GND を接続します。  
+※（スイッチサイエンス扱い）[GROVE - 4ピン - ジャンパオスケーブル](https://www.switch-science.com/catalog/6245/)
+
+<img src="./image/m5stackuart.JPG" width=300>
 
 ## 2.3 SPI接続
 　SS, +5V, GNDは、ピンソケットJ3に接続します。SCK, MOSI, MISOは、J1(ICSP)に接続します。ICSPのピンヘッダは実装していません。ピンヘッダを別途手配いただき、基板へハンダ付けしてください。接続にはジャンパケーブル等が必要です。
@@ -109,16 +119,19 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 - GND: Ground
 - ICSP: In Circuit Serial Programming
 
-### (1)M5stackのGPIOに接続  
-　接続にはジャンパケーブル等が必要です。SCK=GPIO18, MISO=GPIO19, MOSI=GPIO23, SS=GPIO5, +5V, GND を接続します。  
-<img src="./image/m5stackspi.JPG" width=300>  
+### M5stackのGPIOに接続
+　接続にはジャンパケーブル等が必要です。SCK=GPIO18, MISO=GPIO19, MOSI=GPIO23, SS=GPIO5, +5V, GND を接続します。
 
-## スタンドアロン
-　「ダイオードマトリクススイッチ16基板」をJ2に接続し、ボタン操作で15種類の音声を再生できます。以下の写真でM5Stackは、電源として使用しています。  
-<img src="./image/standalone.JPG" width=300>  
+<img src="./image/m5stackspi.JPG" width=300>
+
+## 2.4 スタンドアロン
+　J2に「ダイオードマトリクススイッチ16基板※」を接続し、ボタン操作で15種類の音声を再生できます。以下の写真でM5Stackは、電源として使用しています。  
+※（スイッチサイエンス扱い）[ダイオードマトリクススイッチ16基板](https://www.switch-science.com/catalog/7626/)
+
+<img src="./image/standalone.JPG" width=300>
 
 # 3. 設定（DIPスイッチ）
-　動作モードおよび使用するインタフェース（通信モード）に合わせて、モジュール基板上のDIPスイッチを設定します。おすすめはI2C接続です。出荷時の設定は、セーフモード・I2C接続です。DIPスイッチの設定はリセット時に反映されます。設定変更後、基板上のリセットボタンを押す必要があります。
+　動作モードおよび使用するインタフェース（通信モード）に合わせて、基板上のDIPスイッチを設定します。おすすめはI2C接続です。出荷時の設定は、セーフモード、I2C接続です。DIPスイッチの設定はリセット時に反映されます。DIPスイッチの設定を変更後、基板上のリセットボタンを押す必要があります。
 
 | 1 | 2 | 3 | 4 | 5 |動作モード|通信モード|備考|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:- |
@@ -133,26 +146,26 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 | - | - | - | - |ON | - | - |パワーアンプが常に動作状態 |
 | - | - | - | - |OFF| - | - |音声再生中以外は、パワーアンプをシャットダウンする(*2)|
 
-※ 1, 2, 3, 4は、DIPスイッチの番号。DIPスイッチはONでGND接続のため、ON=0, OFF=1です。  
+※ 1, 2, 3, 4, 5は、DIPスイッチの番号です。DIPスイッチはONでGND接続のため、ON=0, OFF=1です。  
 (*1) ATP3011の場合、SLEEP解除後の'?'送信で自動設定します。ATP3012の場合EEPROMに設定します。  
 (*2) 音声再生の前後にノイズが発生します。
 
-### JP3 SLEEP 信号
+### JP3 SLEEP信号
 　AquesTalk pico LSIのSLEEPピンをGPIOに接続できます。SLEEP=LowでAquesTalk pico LSIがスリープ状態になります。ATP3011のUART接続において9600bpsより速い速度が必要な場合、「セーフモード」ではなく「コマンド入力モード」が必要であり、速度設定のためにSLEEPの接続が必要です。
 
-### JP3 PLAY 信号
+### JP3 PLAY信号
 　AquesTalk pico LSIのPLAYピンをGPIOに接続できます。AquesTalk pico LSIが音声再生中の間、PLAY=Lowとなります。
 
 # 4. サンプルプログラム
 　AquesTalk pico LSIをM5StackまたはM5Atomに接続し、I2C(Wire), UART(Serial), SPIで動作させるプログラムです。デモの内容は同じです。Arduino-IDE環境で使用します。モジュール基板の設定を予め使用するインタフェースに合わせておく必要があります。
 
-### BF-034_Wire フォルダ
+### BF-034_Wireフォルダ
 　AqeusTalk pico LSIをI2Cで動作させるサンプルプログラムです。#defineでM5Stack, M5Atomの何れかを選択します。
 
-### BF-034_Serial フォルダ
+### BF-034_Serialフォルダ
 　AqeusTalk pico LSIをUARTで動作させるサンプルプログラムです。#defineでM5Stack, M5Atomの何れかを選択します。
 
-### BF-034_Spi フォルダ
+### BF-034_Spiフォルダ
 　AqeusTalk pico LSIを SPIで動作させるサンプルプログラムです。M4Stack専用です。
 
 ## (1) デモの内容
