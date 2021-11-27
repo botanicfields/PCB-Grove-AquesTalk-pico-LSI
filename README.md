@@ -156,7 +156,7 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 　AquesTalk pico LSIのPLAYピンをGPIOに接続できます。AquesTalk pico LSIが音声再生中の間、PLAY=Lowとなります。
 
 # 4. サンプルプログラム
-　AquesTalk pico LSIをM5StackまたはM5Atomに接続し、I2C(Wire), UART(Serial), SPIで動作させるプログラムです。デモの内容は同じです。Arduino-IDE環境で使用します。モジュール基板の設定を予め使用するインタフェースに合わせておく必要があります。
+　AquesTalk pico LSIをM5StackまたはM5Atomに接続し、I2C(Wire), UART(Serial), SPIで動作させるプログラムです。デモの内容は同じです。Arduino-IDE環境で使用します。基板の接続や設定を予め使用するインタフェースに合わせておく必要があります。
 
 ### BF-034_Wireフォルダ
 　AqeusTalk pico LSIをI2Cで動作させるサンプルプログラムです。#defineでM5Stack, M5Atomの何れかを選択します。
@@ -167,9 +167,7 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 ### BF-034_Spiフォルダ
 　AqeusTalk pico LSIを SPIで動作させるサンプルプログラムです。M4Stack専用です。
 
-## (1) デモの内容
-
-### setup()
+## 4.1 setup()
 - SLEEPピンをHighにする（デフォルト: 実行しない）  
 　AquesTalk pico LSIのSLEEPピンとが接続したGPIO5をHIGHにしてSLEEPでない状態にします。
 
@@ -194,7 +192,7 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 
 - チャイムKを発声
 
-### loop()
+## 4.2 loop()
 　ボタンを押すと、ソースコードのpreset_msgから1つを発声します。
 
 - ボタン A（M5Stack）
