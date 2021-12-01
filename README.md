@@ -9,7 +9,7 @@ AquesTalk pico LSI into the Grove of M5
 - [Data Sheet: 音声合成 LSI 「AquesTalk pico LSI」ATP3012](https://www.a-quest.com/archive/manual/atp3012_datasheet.pdf)
 
 ### 委託販売
-（スイッチサイエンス扱い）[AquesTalk pico LSI用Grove(M5)接続基板](https://www.switch-science.com/7625)
+（スイッチサイエンス扱い）[AquesTalk pico LSI用Grove(M5)接続基板](https://www.switch-science.com/catalog/7625/)
 
 ### 動作例
 （YouTube）[AquesTalk pico LSI into the Grove of M5](https://youtu.be/mju6NteZsHU)
