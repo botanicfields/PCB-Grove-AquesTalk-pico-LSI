@@ -158,14 +158,14 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 # 4. サンプルプログラム
 　AquesTalk pico LSIをM5StackまたはM5Atomに接続し、I2C(Wire), UART(Serial), SPIで動作させるプログラムです。デモの内容は同じです。Arduino-IDE環境で使用します。基板の接続や設定を予め使用するインタフェースに合わせておく必要があります。
 
-### BF-034_Wireフォルダ
+### BF-035_Wireフォルダ
 　AqeusTalk pico LSIをI2Cで動作させるサンプルプログラムです。#defineでM5Stack, M5Atomのいずれかを選択します。
 
-### BF-034_Serialフォルダ
+### BF-035_Serialフォルダ
 　AqeusTalk pico LSIをUARTで動作させるサンプルプログラムです。#defineでM5Stack, M5Atomのいずれかを選択します。
 
-### BF-034_Spiフォルダ
-　AqeusTalk pico LSIを SPIで動作させるサンプルプログラムです。M4Stack専用です。
+### BF-035_Spiフォルダ
+　AqeusTalk pico LSIを SPIで動作させるサンプルプログラムです。M5Stack専用です。
 
 ## 4.1 ボタン操作 .. loop()
 　ボタンを押すと、ソースコードのpreset_msgを発声します。初期値はpreset_msg[0]です。
