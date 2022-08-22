@@ -18,7 +18,7 @@
 AquesTalkPicoSerial aqtp;
 
 const char* preset_msg[] = {
-// msssage must be less than 127 characters
+// message must be less than 127 characters
 // ....:....1....:....2....:....3....:....4....:....5....:....6....:....7....:....8....:....9....:....A....:....8....:....C....:..
   "re'-jide_su.yo'-koso wata'ku_sitati,sho'kka-e\r",
   "iti'jide_su.ittai,do'-natte/iru'node_suka zo'rutaisa\r",
