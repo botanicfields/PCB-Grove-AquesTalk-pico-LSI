@@ -159,15 +159,25 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 　AquesTalk pico LSIをM5StackまたはM5Atomに接続し、I2C(Wire), UART(Serial), SPIで動作させるプログラムです。デモの内容は同じです。Arduino-IDE環境で使用します。基板の接続や設定を予め使用するインタフェースに合わせておく必要があります。
 
 ### BF-034_Wireフォルダ
-　AqeusTalk pico LSIをI2Cで動作させるサンプルプログラムです。#defineでM5Stack, M5Atomの何れかを選択します。
+　AqeusTalk pico LSIをI2Cで動作させるサンプルプログラムです。#defineでM5Stack, M5Atomのいずれかを選択します。
 
 ### BF-034_Serialフォルダ
-　AqeusTalk pico LSIをUARTで動作させるサンプルプログラムです。#defineでM5Stack, M5Atomの何れかを選択します。
+　AqeusTalk pico LSIをUARTで動作させるサンプルプログラムです。#defineでM5Stack, M5Atomのいずれかを選択します。
 
 ### BF-034_Spiフォルダ
 　AqeusTalk pico LSIを SPIで動作させるサンプルプログラムです。M4Stack専用です。
 
-## 4.1 setup()
+## 4.1 ボタン操作 .. loop()
+　ボタンを押すと、ソースコードのpreset_msgを発声します。初期値はpreset_msg[0]です。
+
+| M5 | ボタン | 停止中 | 発声中 |
+|:-:|:-:|:-:|:-:|
+|M5Stack| A   | 1つ前のpreset_msgを発声 | 発声を中断して1つ前のpreset_msgを発声 |
+|M5Stack| B   | 現在のpreset_msgを発声 | 発声を中断して停止 |
+|M5Stack| C   | 1つ後のpreset_msgから連続して発声 | 発声を中断して1つ後のpreset_msgから連続して発生 |
+|M5Atom | Btn | 現在のpreset_msgから連続して発声 | 発声を中断して停止 |
+
+## 4.2 setup()
 - SLEEPピンをHighにする（デフォルト: 実行しない）  
 　AquesTalk pico LSIのSLEEPピンとが接続したGPIO5をHIGHにしてSLEEPでない状態にします。
 
@@ -192,21 +202,6 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 
 - チャイムKを発声
 
-## 4.2 loop()
-　ボタンを押すと、ソースコードのpreset_msgから1つを発声します。
-
-- ボタン A（M5Stack）
-　前回発声した 1 つ前のものを発声します。初期値は15番目です。
-
-- ボタン B（M5Stack）
-　前回発声したものを再度発声します。初期値は1番目です。
-
-- ボタン C（M5Stack）
-　前回発声した 1 つ後のものを発声します。初期値は2番目です。
-
-- ボタン（M5Atom）
-　前回発声した 1 つ後のものを発声します。初期値は1番目です。
-
 # 5. ライブラリ
 　AquesTalk pico LSIを使用するためのライブラリです。
 
@@ -219,22 +214,25 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 ### (2) virtual size_t Recv(char* res, size_t res_size) = 0
 　AquesTalk pico LSIから文字列を受信します。受信完了は、'>'または'*'で判断します。純粋仮想関数として定義し、使用するインタフェースに合わせて派生クラスで実装します。
 
-### (3) int ShowRes(int res_length_to_show = 1)
+### (3) virtual bool Busy() = 0
+　発声中などAquesTalk pico LSIが処理中の場合trueを応答します。falseの場合発声が終了したと判断できます。純粋仮想関数として定義し、使用するインタフェースに合わせて派生クラスで実装します。I2C, SPIではおのずとポーリングができますが、UARTではSend()による明示的なポーリングが必要です。
+
+### (4) int ShowRes(int res_length_to_show = 1)
 　AquesTalk pico LSIからの応答をシリアルモニタに出力します。res_length_to_showに2を渡すと、応答が1文字以下の場合にシリアルモニタへの出力を抑止できます。I2C、SPIのポーリングによる応答が正常（'>', 1文字）の場合のシリアルモニタへの出力を省略できます。
 
-### (4) int DumpEeprom()
+### (5) int DumpEeprom()
 　AquesTalk pico LSIのEEPROM (アドレス0x000-0x3FF) の値をシリアルモニタに出力します。
 
-### (5) int WriteEeprom(int address, int data)
+### (6) int WriteEeprom(int address, int data)
 　AquesTalk pico LSIのEEPROMにデータを書き込みます。
 
-### (6) int WritePresetMsg(const char* msg[], int num_of_msg)
+### (7) int WritePresetMsg(const char* msg[], int num_of_msg)
 　AquesTalk pico LSIのEEPROMにプリセットメッセージを書き込みます。書き込みの様子をシリアルモニタに出力します。
 
-### (7) int WriteSerialSpeed(int serial_speed)
+### (8) int WriteSerialSpeed(int serial_speed)
 　AquesTalk pico LSI (ATP3012) のシリアル通信速度を書き換えます。
 
-### (8) int WriteI2cAddress(int i2c_address)
+### (9) int WriteI2cAddress(int i2c_address)
 　AquesTalk pico LSIのI2Cアドレスを書き換えます。
 
 ## 5.2 BF_AquesTalkPicoWire.h
@@ -251,9 +249,6 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 
 ## 5.4 BF_AquesTalkPicoSpi.h
 　AquesTalk pico LSIとSPIでインタフェースする派生クラスです。
-
-### int Begin(SPIClass &spi, int ss);
-　AquesTalk pico LSIを接続するSPIとSSとして使用するGPIOを指定します。
 
 ### int Begin(SPIClass &spi, int ss);
 　AquesTalk pico LSIを接続するSPIとSSとして使用するGPIOを指定します。
