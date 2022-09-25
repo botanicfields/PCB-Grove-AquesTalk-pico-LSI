@@ -116,7 +116,7 @@ void setup()
 
   // for Han-nya Shingyo
   aqtp.WriteSpeed(70);
-  aqtp.WritePause(0);
+  aqtp.WritePause();
 
   // play control
   play_command = play_stop;

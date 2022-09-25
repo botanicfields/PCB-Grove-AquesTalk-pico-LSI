@@ -229,11 +229,17 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 ### (7) int WritePresetMsg(const char* msg[], int num_of_msg)
 　AquesTalk pico LSIのEEPROMにプリセットメッセージを書き込みます。書き込みの様子をシリアルモニタに出力します。
 
-### (8) int WriteSerialSpeed(int serial_speed)
-　AquesTalk pico LSI (ATP3012) のシリアル通信速度を書き換えます。
+### (8)  int WriteSpeed(int speed)
+　発話速度をEEPROMに設定します。50～300を設定できます。デフォルトは100です。
 
-### (9) int WriteI2cAddress(int i2c_address)
-　AquesTalk pico LSIのI2Cアドレスを書き換えます。
+### (9)  int WritePause(int pause)
+　文末ポーズの長さをEEPROMに設定します。256～65535を設定できます。65535を設定すると自動になります。デフォルトは65535です。
+
+### (10) int WriteSerialSpeed(int serial_speed)
+　AquesTalk pico LSI (ATP3012) のシリアル通信速度を書き換えます。デフォルトは9600です。
+
+### (11) int WriteI2cAddress(int i2c_address)
+　AquesTalk pico LSIのI2Cアドレスを書き換えます。デフォルトは0x2Eです。
 
 ## 5.2 BF_AquesTalkPicoWire.h
 　AquesTalk pico LSIとI2Cでインタフェースする派生クラスです。
