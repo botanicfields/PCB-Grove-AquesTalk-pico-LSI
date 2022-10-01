@@ -8,11 +8,19 @@ AquesTalk pico LSI into the Grove of M5
 - [Data Sheet: 音声合成 LSI 「AquesTalk pico LSI」ATP3011](https://www.a-quest.com/archive/manual/atp3011_datasheet.pdf)
 - [Data Sheet: 音声合成 LSI 「AquesTalk pico LSI」ATP3012](https://www.a-quest.com/archive/manual/atp3012_datasheet.pdf)
 
+### 基板V03 の変更点
+　2022年10月から基板V03を提供しています。ピンソケットJ7を追加しました。
+
 ### 委託販売
 （スイッチサイエンス扱い）[AquesTalk pico LSI用Grove(M5)接続基板](https://www.switch-science.com/catalog/7625/)
 
 ### 動作例
-（YouTube）[AquesTalk pico LSI into the Grove of M5](https://youtu.be/mju6NteZsHU)
+- (YouTube）[AquesTalk pico LSI into the Grove of M5](https://youtu.be/mju6NteZsHU)  
+M5AtomにI2Cで接続しています。以下のサンプルプログラムを使用しています。  
+[GitHub: botanicfields/PCB-Grove-AquesTalk-pico-LSI/tree/main/BF-035_Wire](https://github.com/botanicfields/PCB-Grove-AquesTalk-pico-LSI/tree/main/BF-035_Wire)
+- (YouTube）[般若心経 by AquesTalk pico LSI and M5Stack, Glove PCB, I2C](https://youtu.be/BDH4y0ca8p8)  
+M5SrackにI2Cで接続しています。基板V03のJ7とM5StackのGPIO35をジャンパワイヤーで接続しています。以下のサンプルプログラムを使用しています。  
+[GitHub: botanicfields/PCB-MBUS-AquesTalk-pico-LSI/tree/main/BF-034_han-nya](https://github.com/botanicfields/PCB-MBUS-AquesTalk-pico-LSI/tree/main/BF-034_han-nya)
 
 ### 組み立て例
 　AquesTalk piso LSI（28ピンDIPタイプ）1個をICソケットに装着します。ATP3011用とATP3012用のソケットがあります。どちらか一方のみを装着してください。  
@@ -45,9 +53,9 @@ SPI: Serial Peripheral Interface
 ※ スピーカー、スピーカーケーブルは付属しません。  
 ※ ケースや足などは付属しません。
 
-### 商品写真
-写真左: 内容物、写真右: 基板裏面  
-<img src="./image/product1.JPG" width=300> <img src="./image/product2.JPG" width=300>  
+### 商品写真（基板V03）
+写真: 内容物、基板裏面  
+<img src="./image/v3product.JPG" width=300> <img src="./image/v3back.JPG" width=300>  
 
 ## 1.3 別途必要なもの
 - AquesTalk pico LSI（秋月電子通商扱い）  
@@ -61,17 +69,16 @@ ATP3011M6-PU](https://akizukidenshi.com/catalog/g/gI-06225/)
 ATP3012F6-PU](https://akizukidenshi.com/catalog/g/gI-09973/)  
 [音声合成ＬＳＩ　ＡＴＰ３０１２Ｒ５－ＰＵ（小型ロボットの音声）
 ATP3012R5-PU](https://akizukidenshi.com/catalog/g/gI-11517/)  
-- スピーカー  
+- スピーカー、スピーカーケーブル  
 4～8Ω程度、1W以上が望ましいです
-- スピーカーケーブル  
-スピーカーを基板上のターミナルブロックに接続します。
 - 工具  
 ドライバ（ターミナルブロックの締め付けに必要です）など
 - M5Stack, M5Atom  
 サンプルプログラムは、M5Stack Core Basic, M5Atomで動作を確認しています
-- Arudino-IDEが動作する環境  
+- Arduino-IDEが動作する環境  
+サンプルプログラムは、Arduino IDE用です
 - その他  
-SLEEP信号などを接続する場合には、ジャンパケーブルが必要です。SPI接続の場合には、ピンヘッダおよびハンダ付けが必要です
+SLEEP信号などを接続する場合には、ジャンパワイヤー等が必要です。SPI接続の場合には、ピンヘッダおよびハンダ付けが必要です
 
 # 2. 接続
 
@@ -89,7 +96,7 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 
 <img src="./image/m5atombi2c.JPG" width=300>
 
-### (3)M5stackのGroveコネクタに接続  
+### (3)M5StackのGroveコネクタに接続  
 　I2Cとして、デフォルトのWire（SCL=GPIO22, SDA=GPIO21）を使用できます。
 
 <img src="./image/m5stacki2c.JPG" width=300>
@@ -102,14 +109,14 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 
 <img src="./image/m5atomuart.JPG" width=300>
 
-### (2)M5stackのGPIOに接続  
+### (2)M5StackのGPIOに接続  
 　接続には、「GROVE - 4ピン - ジャンパオスケーブル※（別売）」相当のケーブルが必要です。M5Stack側は、RX=GPIO16, TX=GPIO17, +5V, GND を接続します。  
 ※（スイッチサイエンス扱い）[GROVE - 4ピン - ジャンパオスケーブル](https://www.switch-science.com/catalog/6245/)
 
 <img src="./image/m5stackuart.JPG" width=300>
 
 ## 2.3 SPI接続
-　SS, +5V, GNDは、ピンソケットJ3に接続します。SCK, MOSI, MISOは、J1(ICSP)に接続します。ICSPのピンヘッダは実装していません。ピンヘッダを別途手配いただき、基板へハンダ付けしてください。接続にはジャンパケーブル等が必要です。
+　SS, +5V, GNDは、ピンソケットJ3に接続します。SCK, MOSI, MISOは、J1(ICSP)に接続します。ICSPのピンヘッダは実装していません。ピンヘッダを別途手配いただき、基板へハンダ付けしてください。接続にはジャンパワイヤー等が必要です。
 - SPI: Serial Periphral Interface
 - SCK: Serial ClocK
 - MOSI: Master Out Slave In
@@ -118,8 +125,8 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 - GND: Ground
 - ICSP: In Circuit Serial Programming
 
-### M5stackのGPIOに接続
-　接続にはジャンパケーブル等が必要です。SCK=GPIO18, MISO=GPIO19, MOSI=GPIO23, SS=GPIO5, +5V, GND を接続します。
+### M5StackのGPIOに接続
+　接続にはジャンパワイヤー等が必要です。SCK=GPIO18, MISO=GPIO19, MOSI=GPIO23, SS=GPIO5, +5V, GND を接続します。
 
 <img src="./image/m5stackspi.JPG" width=300>
 
@@ -129,8 +136,25 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 
 <img src="./image/standalone.JPG" width=300>
 
+## 2.5 その他共通
+### J3 SLEEP信号
+　AquesTalk pico LSIのSLEEPピンをGPIOに接続できます。SLEEP=LowでAquesTalk pico LSIがスリープ状態になります。ATP3011のUART接続において9600bpsより速い速度が必要な場合、「セーフモード」ではなく「コマンド入力モード」が必要であり、速度設定のためにSLEEPの接続が必要です。
+
+### J3 PLAY信号
+　AquesTalk pico LSIのPLAYピンをGPIOに接続できます。AquesTalk pico LSIが音声再生中の間、PLAY=Lowとなります。
+
+### J6 スピーカー
+　スピーカーを接続します。2本のいずれもGNDではありません。
+
+### J7 音声信号（基板V03）
+　音量調節ボリュームに入る時点のアナログ音声をジャンパワイヤー等に取り出すことができます。ATP3011、ATP3012でピンが異なります。  
+ATP3011の例  
+<img src="./image/v3atp3011.JPG" width=300>  
+ATP3012の例  
+<img src="./image/v3atp3012.JPG" width=300>  
+
 # 3. 設定（DIPスイッチ）
-　動作モードおよび使用するインタフェース（通信モード）に合わせて、基板上のDIPスイッチを設定します。おすすめはI2C接続です。DIPスイッチの設定はリセット時に反映されます。DIPスイッチの設定を変更後、基板上のリセットボタンを押す必要があります。出荷時の設定は、セーフモード・I2C接続・パワーアンプが常に動作状態（OFF,ON,OFF,ON,ON）です。
+　動作モードおよび使用するインタフェース（通信モード）に合わせて、基板上のDIPスイッチを設定します。おすすめはI2C接続です。DIPスイッチの設定はリセット時に反映されます。**DIPスイッチの設定を変更後、基板上のリセットボタンを押す必要があります**。出荷時の設定は、セーフモード・I2C接続・パワーアンプが常に動作状態（OFF,ON,OFF,ON,ON）です。
 
 | 1 | 2 | 3 | 4 | 5 |動作モード|通信モード|備考|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:- |
@@ -148,12 +172,6 @@ SLEEP信号などを接続する場合には、ジャンパケーブルが必要
 ※ 1, 2, 3, 4, 5は、DIPスイッチの番号です。DIPスイッチはONでGND接続のため、ON=0, OFF=1です。  
 (*1) ATP3011の場合、SLEEP解除後の'?'送信で自動設定します。ATP3012の場合EEPROMに設定します。  
 (*2) 音声再生の前後にノイズが発生します。
-
-### JP3 SLEEP信号
-　AquesTalk pico LSIのSLEEPピンをGPIOに接続できます。SLEEP=LowでAquesTalk pico LSIがスリープ状態になります。ATP3011のUART接続において9600bpsより速い速度が必要な場合、「セーフモード」ではなく「コマンド入力モード」が必要であり、速度設定のためにSLEEPの接続が必要です。
-
-### JP3 PLAY信号
-　AquesTalk pico LSIのPLAYピンをGPIOに接続できます。AquesTalk pico LSIが音声再生中の間、PLAY=Lowとなります。
 
 # 4. サンプルプログラム
 　AquesTalk pico LSIをM5StackまたはM5Atomに接続し、I2C(Wire), UART(Serial), SPIで動作させるプログラムです。デモの内容は同じです。Arduino-IDE環境で使用します。基板の接続や設定を予め使用するインタフェースに合わせておく必要があります。
